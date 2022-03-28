@@ -59,6 +59,6 @@ int countMin(string s) {
 }
 
 int main() {
-  string s = "potty";
+  string s = "shah";
   cout<<countMin(s)<<endl;
 }
