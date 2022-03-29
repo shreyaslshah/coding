@@ -12,21 +12,22 @@ struct Node {
 void insert();
 void display(struct Node *head);
 
+// my method
 struct Node *reverseList(struct Node *head) {
-  if(head->next == NULL){
+  if (head->next == NULL) {
     return head;
   }
-  Node* prev = head;
-  Node* curr = head->next;
-  if(curr->next == NULL){
+  Node *prev = head;
+  Node *curr = head->next;
+  if (curr->next == NULL) {
     head->next = NULL;
     curr->next = head;
     return curr;
   }
-  Node* next = curr->next;
+  Node *next = curr->next;
   prev->next = NULL;
 
-  while(next!=NULL){
+  while (next != NULL) {
     curr->next = prev;
     prev = curr;
     curr = next;
@@ -34,6 +35,20 @@ struct Node *reverseList(struct Node *head) {
   }
   curr->next = prev;
   return curr;
+}
+
+// proper method
+struct Node *reverseList(struct Node *head) {
+  Node *curr = head;
+  Node *prev = NULL;
+  Node *next = NULL;
+  while (curr) {
+    next = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
 }
 
 int main() {
