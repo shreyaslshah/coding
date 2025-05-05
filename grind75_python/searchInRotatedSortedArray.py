@@ -10,12 +10,16 @@ class Solution:
       m = (l+r)//2
       if nums[m]==target:
         return m
+      # we are in right sorted portion
       if nums[m]<nums[r]:
+        # check if target is between mid and right
         if nums[m]<target<=nums[r]:
           l = m+1
         else:
           r = m-1
+      # we are in left sorted portion
       else:
+        # check if target is between left and mid
         if nums[l]<=target<nums[m]:
           r = m-1
         else:

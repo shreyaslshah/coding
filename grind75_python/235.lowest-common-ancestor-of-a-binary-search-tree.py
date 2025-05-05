@@ -14,6 +14,7 @@ class TreeNode:
 
 
 class Solution:
+  # for BST
   def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
     if not root:
       return None

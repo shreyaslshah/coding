@@ -2,6 +2,7 @@
 
 from typing import List
 
+
 class Solution:
 
   def sortColors(self, nums: List[int]) -> None:
@@ -9,23 +10,21 @@ class Solution:
     r = len(nums)-1
     curr = 0
 
-    while curr<=r:
+    while curr <= r:
       if nums[curr] == 1:
-        curr+=1
-      elif nums[curr]==0:
+        curr += 1
+      elif nums[curr] == 0:
         nums[curr] = nums[l]
         nums[l] = 0
-        l+=1
-        curr = l
+        l += 1
+        curr += 1
       else:
         nums[curr] = nums[r]
         nums[r] = 2
-        r-=1
-    
-nums = [2,0,1]
+        r -= 1
+
+
+nums = [2, 0, 1]
 s = Solution()
 s.sortColors(nums)
 print(nums)
-
-
-    

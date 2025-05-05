@@ -6,17 +6,16 @@ class Solution:
     currMajority = nums[0]
 
     for num in nums:
-      if num==currMajority:
-        count+=1
+      if num == currMajority:
+        count += 1
       else:
         if count:
-          count-=1
+          count -= 1
         else:
           currMajority = num
-          count=1
-    
+          count = 1
+
     return currMajority
-        
 
 
 # This approach (boyer moore voting algorithm) works because:
